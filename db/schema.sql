@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS tacos_db;
+
+USE tacos_db;
+
+DROP TABLE IF EXISTS tacos;
+
+CREATE TABLE tacos (
+id INT NOT NULL AUTO_INCREMENT,
+taco_name VARCHAR(80) NOT NULL,
+shell VARCHAR(80) NOT NULL,
+vegetarian BOOLEAN DEFAULT false,
+picked_up BOOLEAN DEFAULT false,
+PRIMARY KEY (id)
+)
+
