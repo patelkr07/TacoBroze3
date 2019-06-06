@@ -1,0 +1,10 @@
+<li>
+    {{taco_name}}
+
+    <button class="change-pickedup" data-id="{{id}}" data-newpickedup="{{picked_up}}">
+        {{#if picked_up}}Picked up!{{else}}Not Picked Up!{{/if}}
+    </button>
+
+    <button class="delete-taco" data-id="{{this.id}}">DELETE!</button>
+
+</li>

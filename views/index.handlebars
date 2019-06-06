@@ -1,7 +1,65 @@
 <h1>TacoBroze</h1>
 
 <h2>All Tacos</h2>
+
+<ul>
+    {{#each tacos}}
+      {{#if vegetarian}}
+        {{> tacos/taco-block vegetarian=true}}
+      {{/if}}
+    {{/each}}
+    {{#each tacos}}
+      {{#unless vegetarian}}
+        {{> tacos/taco-block vegetarian=false}}
+      {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Vegetarian Tacos</h2>
 <ul>
   {{#each tacos}}
+    {{#if vegetarian}}
+        {{> tacos/taco-block vegetarian=true}}
+    {{/if}}
   {{/each}}
 </ul>
+
+<h2>Tacos w/ meat</h2>
+
+<ul>
+    {{#each tacos}}
+      {{#unless vegetarian}}
+        {{> tacos/taco-block vegetarian=false}}
+      {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Add a Taco</h2>
+<form class="create-form">
+
+
+    <div class="form-group">
+        <label for="taco-name">Taco Name:</label>
+        <input type="text" id="taco-name" name="taco_name">
+    </div>
+
+    <div class="form-group">
+        <label for="shell">Shell Type:</label>
+        <input type="text" id="shell" name="shell">
+    </div>
+
+    <div class="form-group">
+        <label for="vegetarian">Vegetarian?</label><br>
+        <input type="radio" name="vegetarian" value="1" checked> Vegetarian<br>
+        <input type="radio" name="vegetarian" value="0"> Meat
+    </div>
+
+    <div class="form-group">
+        <label for="picked-up">Picked up?</label><br>
+        <input type="radio" name="picked_up" value="1" checked> Picked up<br>
+        <input type="radio" name="picked_up" value="0">Not Picked Up
+    </div>
+
+    <button type="submit">Add Taco</button>
+    </form>
+

@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
     });
 });
 
-router.post("/api/tacos", function(req, res) {
+router.post("/api/tacos/", function(req, res) {
     taco.create([
         "taco_name", "shell", "vegetarian", "picked_up"
     ], [
