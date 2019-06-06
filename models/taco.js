@@ -20,7 +20,7 @@ var taco = {
     },
 
     delete: function(condition, cb) {
-        orm.delete("tacos", condition, funtion(res) {
+        orm.delete("tacos", condition, function(res) {
             cb(res);
         });
     }
